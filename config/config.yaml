@@ -1,0 +1,12 @@
+---
+  server:
+    host: jira
+    login: qat
+    password: qat123
+  filein: data\\empl.csv
+  fileout: out\\script.bat
+  filekeyout: out\\key.txt
+  group: lsatest
+  template:
+    addGroup: jira --action addGroup  --group @group@  --preserveCase --continue -u @login@ -p @password@ --server @host@
+    addUser: --action addUser  --userId <<LoginAD>>  --userFullName <<Name>>  --userEmail @userEmail@  --group @group@ --continue -u @login@ -p @password@ --server @host@
