@@ -1,12 +1,15 @@
 ---
   server:
-    host: jira
-    login: qat
-    password: qat123
+    host: "%base_url%"
+    login: irbis
+    password: jira7IrbCh
   filein: data\\empl.csv
   fileout: out\\script.bat
-  filekeyout: out\\key.txt
+  delimeter: "|"
+  schema: dbo
+  fileCsvDirIn: data
+  fileSqlDirOut: out
   group: lsatest
   template:
     addGroup: jira --action addGroup  --group @group@  --preserveCase --continue -u @login@ -p @password@ --server @host@
-    addUser: --action addUser  --userId <<LoginAD>>  --userFullName <<Name>>  --userEmail @userEmail@  --group @group@ --continue -u @login@ -p @password@ --server @host@
+    addUser: --action addUser  --userId <<loginAd>>  --userFullName <<fioComp>>  --userEmail <<emailComp>>  --group @group@ --continue -u @login@ -p @password@ --server @host@
